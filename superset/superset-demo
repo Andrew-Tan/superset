@@ -4,4 +4,4 @@
 superset-init
 
 # Load some data to play with
-superset load_examples
+# superset load_examples

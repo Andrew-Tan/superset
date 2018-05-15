@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 # Superset version
-ARG SUPERSET_VERSION=0.25.2
+ARG SUPERSET_VERSION=0.24.0
 
 # Configure environment
 ENV LANG=C.UTF-8 \
@@ -32,7 +32,6 @@ RUN useradd -U -m superset && \
     apt-get clean && \
     rm -r /var/lib/apt/lists/* && \
     pip3 install --no-cache-dir \
-        flask==0.12.2 \
         flask-cors==3.0.3 \
         flask-mail==0.9.1 \
         flask-oauth==0.12 \
@@ -47,7 +46,6 @@ RUN useradd -U -m superset && \
         redis==2.10.5 \
         sqlalchemy-redshift==0.5.0 \
         sqlalchemy-clickhouse==0.1.1.post3 \
-        sqlalchemy-utils==0.32.21 \
         Werkzeug==0.12.1 \
         superset==${SUPERSET_VERSION}
 

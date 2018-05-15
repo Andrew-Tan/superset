@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 # Superset version
-ARG SUPERSET_VERSION=0.23.3
+ARG SUPERSET_VERSION=0.22.1
 
 # Configure environment
 ENV LANG=C.UTF-8 \
@@ -29,9 +29,7 @@ RUN useradd -U -m superset && \
         openjdk-8-jdk \
         python3-dev \
         python3-pip && \
-    apt-get clean && \
-    rm -r /var/lib/apt/lists/* && \
-    pip3 install --no-cache-dir \
+    pip3 install \
         flask-cors==3.0.3 \
         flask-mail==0.9.1 \
         flask-oauth==0.12 \
